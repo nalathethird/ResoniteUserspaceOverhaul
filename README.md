@@ -1,6 +1,6 @@
-# Userspace UI Overhaul
+# Userspace Overhaul
 
-A Resonite mod that enhances the userspace UI experience with scalable orbs, adjustable UI elements, and improved preview controls.
+A Resonite mod that enhances the userspace with new userspace fixes/tweaks and features including, scalable Mesh/Material/World orbs, customisable ReferenceProxy UI, and improved preview controls.
 
 ## Features
 
