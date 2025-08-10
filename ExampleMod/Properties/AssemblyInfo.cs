@@ -1,9 +1,11 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("ExampleMod")]
-[assembly: AssemblyProduct("ExampleMod")]
-[assembly: AssemblyDescription("Description of your mod")]
-[assembly: AssemblyCompany("ExampleAuthor")]
-[assembly: AssemblyCopyright("Copyright © 2025 ExampleAuthor")]
-[assembly: AssemblyVersion(ExampleMod.ExampleMod.VERSION_CONSTANT)]
-[assembly: AssemblyFileVersion(ExampleMod.ExampleMod.VERSION_CONSTANT)]
+using UserspaceOverhaul;
+
+[assembly: AssemblyTitle("UserspaceOverhaul")]
+[assembly: AssemblyProduct("UserspaceOverhaul")]
+[assembly: AssemblyDescription("Allows the user to edit the Userspace and includes several Fixes for the game.")]
+[assembly: AssemblyCompany("NalaTheThird")]
+[assembly: AssemblyCopyright("Copyright © 2025 NalaTheThird")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
