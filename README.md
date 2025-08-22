@@ -1,14 +1,35 @@
-# ExampleMod
+# Userspace Overhaul
 
-A [ResoniteModLoader](https://github.com/resonite-modding-group/ResoniteModLoader) mod for [Resonite](https://resonite.com/) that does something.
-<!-- Edit to describe what your mod does and what it may solve -->
-<!-- If your mod solves an issue, you should link to any relevant issues on the resonite github -->
+A Resonite mod that enhances the userspace with new userspace fixes/tweaks and features including, scalable Mesh/Material/World orbs, customisable ReferenceProxy UI, and improved preview controls.
 
+## Features
 
-## Screenshots
-<!-- If your mod has visible effects in the game, attach some images or video of it in-use here! Otherwise remove this section -->
+- **Scalable World Orbs**  
+  Allows World Orbs to be resized for better visibility and interaction.  
+  *Adapted from [ScalableWorldOrbs by Delta](https://github.com/XDelta/ScalableWorldOrbs)*
+
+- **Scalable Material Orbs**  
+  Enables scaling of Material Orbs for improved usability.  
+  *Adapted from [ScalableMaterialOrbs by AlexW-578](https://github.com/AlexW-578/ScalableMaterialOrbs)*
+
+- **Scalable Mesh Orbs & Spinner Disabling**  
+  Mesh Orbs can be resized, and their preview spinners can be disabled for a cleaner look.
+
+- **UI Scaling & Preview Adjustments**  
+  Customize label scale, preview scale, font, and colors for userspace UI elements.
 
 ## Installation
-1. Install [ResoniteModLoader](https://github.com/resonite-modding-group/ResoniteModLoader).
-1. Place [ExampleModName.dll](https://github.com/YourGithubUsername/YourModRepoName/releases/latest/download/ExampleModName.dll) into your `rml_mods` folder. This folder should be at `C:\Program Files (x86)\Steam\steamapps\common\Resonite\rml_mods` for a default install. You can create it if it's missing, or if you launch the game once with ResoniteModLoader installed it will create this folder for you.
-1. Start the game. If you want to verify that the mod is working you can check your Resonite logs.
+
+1. Download the latest release from [Releases](https://github.com/nalathethird/ResoniteUserspaceUI-Overhaul/releases/latest).
+2. Place the DLL in your Resonite `rml_mods` folder.
+3. Launch Resonite. Configuration options are available in the mod settings.
+
+## Credits
+
+- **Delta** for [ScalableWorldOrbs](https://github.com/XDelta/ScalableWorldOrbs)
+- **AlexW-578** for [ScalableMaterialOrbs](https://github.com/AlexW-578/ScalableMaterialOrbs)
+- **NalaTheThird** for everything else
+
+## License
+
+See [LICENSE](LICENSE) for details.
