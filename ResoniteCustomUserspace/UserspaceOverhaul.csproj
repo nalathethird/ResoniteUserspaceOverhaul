@@ -1,0 +1,98 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<RootNamespace>UserspaceOverhaul</RootNamespace>
+		<AssemblyName>UserspaceOverhaul</AssemblyName>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<TargetFramework>net9.0</TargetFramework>
+		<FileAlignment>512</FileAlignment>
+		<LangVersion>12.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<Deterministic>true</Deterministic>
+		<!-- Change CopyToMods to true if you'd like builds to be moved into the Mods folder automatically-->
+		<CopyToMods Condition="'$(CopyToMods)'==''">true</CopyToMods>
+		<DebugType Condition="'$(Configuration)'=='Debug'">embedded</DebugType>
+	</PropertyGroup>
+
+  <PropertyGroup Condition="'$(ResonitePath)'==''">
+    <!-- If you don't want to provide a ResonitePath in dotnet build, you can specify one here -->
+    <ResonitePath>$(MSBuildThisFileDirectory)Resonite/</ResonitePath>
+    <ResonitePath Condition="Exists('E:\SteamLibrary\steamapps\common\Resonite\')">E:\SteamLibrary\steamapps\common\Resonite\</ResonitePath>
+    <ResonitePath Condition="Exists('$(HOME)/.steam/steam/steamapps/common/Resonite/')">$(HOME)/.steam/steam/steamapps/common/Resonite/</ResonitePath>
+  </PropertyGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(CopyToMods)'=='true'">
+		<Message Text="Attempting to copy $(TargetFileName) to $(ResonitePath)rml_mods" Importance="high" />
+		<Copy SourceFiles="$(TargetDir)$(TargetFileName)" DestinationFolder="$(ResonitePath)rml_mods" ContinueOnError="true" />
+	</Target>
+
+	<ItemGroup>
+	  <Compile Remove="EngineReferences\**" />
+	  <Compile Remove="GameExamples\**" />
+	  <EmbeddedResource Remove="EngineReferences\**" />
+	  <EmbeddedResource Remove="GameExamples\**" />
+	  <None Remove="EngineReferences\**" />
+	  <None Remove="GameExamples\**" />
+	</ItemGroup>
+  
+	<ItemGroup>
+	  <Compile Remove="BetterBlockedUsers.cs" />
+	  <Compile Remove="DeselectOwnGizmos.cs" />
+	  <Compile Remove="DoNotLoadLocalHome.cs" />
+	  <Compile Remove="GizmoSnappingTweaks.cs" />
+	  <Compile Remove="GizmoVisibilityToggle.cs" />
+	  <Compile Remove="ModelImportFix.cs" />
+	  <Compile Remove="UserspaceLaserFix.cs" />
+	  <Compile Remove="UserspaceMaxDesktopFPS.cs" />
+	  <Compile Remove="UserspaceRadiantDashCustomBackground.cs" />
+	  <Compile Remove="UserspaceWorldUserCountImageFix.cs" />
+	  <Compile Remove="VR-Desktop_Audio_SettingsFix.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="HowToMod.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Elements.Assets">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\Elements.Assets.dll</HintPath>
+		</Reference>
+		<Reference Include="Elements.Core">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\Elements.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Elements.Data">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\Elements.Data.dll</HintPath>
+		</Reference>
+		<Reference Include="FrooxEngine">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\FrooxEngine.dll</HintPath>
+		</Reference>
+		<Reference Include="FrooxEngine.Store">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\FrooxEngine.Store.dll</HintPath>
+		</Reference>
+		<Reference Include="Newtonsoft.Json">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+		<Reference Include="Renderite.Shared">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\Renderite.Shared.dll</HintPath>
+		</Reference>
+		<Reference Include="ResoniteHotReloadLib">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\rml_libs\ResoniteHotReloadLib.dll</HintPath>
+		</Reference>
+		<Reference Include="ResoniteHotReloadLibCore">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\rml_libs\ResoniteHotReloadLibCore.dll</HintPath>
+		</Reference>
+		<Reference Include="ResoniteModLoader">
+			<HintPath>$(ResonitePath)Libraries\ResoniteModLoader.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="HarmonyLib">
+			<HintPath>$(ResonitePath)rml_libs\0Harmony.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="SkyFrost.Base">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\SkyFrost.Base.dll</HintPath>
+		</Reference>
+		<Reference Include="SkyFrost.Base.Models">
+		  <HintPath>E:\SteamLibrary\steamapps\common\Resonite\SkyFrost.Base.Models.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+</Project>
