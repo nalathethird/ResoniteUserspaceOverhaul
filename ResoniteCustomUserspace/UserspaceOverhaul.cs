@@ -90,7 +90,7 @@ namespace UserspaceOverhaul {
 			config.Save(true);
 			Msg($"[{Name}] Config loaded: Enabled={config.GetValue(Enabled)}, uiColor={config.GetValue(uiColor)}, uiSize={config.GetValue(uiScale)}, uiFont={config.GetValue(uiFont)}, uiFontColor={config.GetValue(uiFontColor)}");
 
-			var harmony = new Harmony("com.nalathethird.UserspaceUOverhaul");
+			var harmony = new Harmony("com.nalathethird.UserspaceUIOverhaul");
 			harmony.PatchAll();
 
 			Msg($"[{Name}] All Harmony patches applied.");
