@@ -16,11 +16,11 @@ namespace UserspaceOverhaul {
 	// - MeshOrb scaling and spinner disabling by Me (NalaTheThird)
 
 	public class UserspaceOverhaul : ResoniteMod {
-		internal const string VERSION_CONSTANT = "1.0.4a";
+		internal const string VERSION_CONSTANT = "1.0.3";
 		public override string Name => "UserspaceOverhaul";
 		public override string Author => "NalaTheThird";
 		public override string Version => VERSION_CONSTANT;
-		public override string Link => "https://github.com/nalathethird/ResoniteUserspaceUI-Overhaul/";
+		public override string Link => "https://github.com/nalathethird/ResoniteUserspaceOverhaul/";
 
 		[AutoRegisterConfigKey]
 		public static readonly ModConfigurationKey<bool> Enabled = new(
@@ -90,7 +90,7 @@ namespace UserspaceOverhaul {
 			config.Save(true);
 			Msg($"[{Name}] Config loaded: Enabled={config.GetValue(Enabled)}, uiColor={config.GetValue(uiColor)}, uiSize={config.GetValue(uiScale)}, uiFont={config.GetValue(uiFont)}, uiFontColor={config.GetValue(uiFontColor)}");
 
-			var harmony = new Harmony("com.nalathethird.UserspaceUIOverhaul");
+			var harmony = new Harmony("com.nalathethird.UserspaceUOverhaul");
 			harmony.PatchAll();
 
 			Msg($"[{Name}] All Harmony patches applied.");
